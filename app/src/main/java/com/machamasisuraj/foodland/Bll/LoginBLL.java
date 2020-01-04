@@ -1,4 +1,8 @@
 package com.machamasisuraj.foodland.Bll;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.machamasisuraj.foodland.Api.RetrofitCaller;
 import com.machamasisuraj.foodland.Api.UsersAPI;
 import com.machamasisuraj.foodland.Response.SignUpResponse;
 import com.machamasisuraj.foodland.Url.Url;
@@ -12,7 +16,7 @@ public class LoginBLL {
 
     public boolean checkUser(String username, String password) {
 
-        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        UsersAPI usersAPI = RetrofitCaller.getInstance().create(UsersAPI.class);
         Call<SignUpResponse> usersCall = usersAPI.checkUser(username, password);
 
         try {
@@ -22,6 +26,7 @@ public class LoginBLL {
 
                 Url.token += loginResponse.body().getToken();
                 // Url.Cookie = imageResponseResponse.headers().get("Set-Cookie");
+                Log.d("token received", "checkUser: "+ Url.token);
                 isSuccess = true;
             }
         } catch (IOException e) {

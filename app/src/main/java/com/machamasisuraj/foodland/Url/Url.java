@@ -9,11 +9,4 @@ public class Url {
     public static String token = "Bearer ";
     public static String imagePath = base_url + "uploads/" ;
 
-    public static Retrofit getInstance() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(base_url)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        return retrofit;
-    }
 }

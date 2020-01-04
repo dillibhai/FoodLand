@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
+import com.machamasisuraj.foodland.Api.RetrofitCaller;
 import com.machamasisuraj.foodland.Api.UsersAPI;
 import com.machamasisuraj.foodland.Model.User;
 import com.machamasisuraj.foodland.Response.ImageResponse;
@@ -123,7 +124,7 @@ public class SignupActivity extends AppCompatActivity {
         MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile",
                 file.getName(), requestBody);
 
-        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        UsersAPI usersAPI = RetrofitCaller.getInstance().create(UsersAPI.class);
         Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
 
         StrictModeClass.StrictMode();
@@ -149,7 +150,7 @@ public class SignupActivity extends AppCompatActivity {
 
         User users = new User(fname, lname, username, password, imageName);
 
-        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        UsersAPI usersAPI = RetrofitCaller.getInstance().create(UsersAPI.class);
         Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
 
         signUpCall.enqueue(new Callback<SignUpResponse>() {
