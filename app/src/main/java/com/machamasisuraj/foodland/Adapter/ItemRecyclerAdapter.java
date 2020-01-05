@@ -36,7 +36,7 @@ public class ItemRecyclerAdapter extends  RecyclerView.Adapter<ItemRecyclerAdapt
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Item item = itemList.get(position);
         holder.textView.setText(item.getItemName());
-        holder.textView2.setText(item.getNumber());
+        holder.textView2.setText("Rs. "+item.getPrice());
         holder.textView4.setText(item.getDetail());
         holder.textView5.setText(item.getResturant());
 

@@ -6,23 +6,11 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Slide to Nav Drawer"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:id="@+id/tv_textnames" />
 
-    <RelativeLayout
-        android:layout_marginTop="100dp"
-        android:id="@+id/fragementContainer"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/itemlists"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

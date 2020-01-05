@@ -3,15 +3,15 @@ package com.machamasisuraj.foodland.Model;
 public class Item {
 
     private String itemName;
-    private int number;
+    private int price;
     private String detail;
     private String item_category;
     private String image;
     private String resturant;
 
-    public Item(String itemName, int number, String detail, String item_category, String image, String resturant) {
+    public Item(String itemName, int price, String detail, String item_category, String image, String resturant) {
         this.itemName = itemName;
-        this.number = number;
+        this.price = price;
         this.detail = detail;
         this.item_category = item_category;
         this.image = image;
@@ -26,12 +26,12 @@ public class Item {
         this.itemName = itemName;
     }
 
-    public int getNumber() {
-        return number;
+    public int getPrice() {
+        return price;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public String getDetail() {
