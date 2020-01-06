@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navone:
                         Toast.makeText(MainActivity.this, "heheh clicked", Toast.LENGTH_SHORT).show();
                     case R.id.uploadmage:
-                        Toast.makeText(MainActivity.this, "UPload File ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Upload File ", Toast.LENGTH_SHORT).show();
                     default:
                         return true;
                 }

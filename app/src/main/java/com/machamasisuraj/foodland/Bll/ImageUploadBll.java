@@ -15,6 +15,7 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.Response;
 
 public class ImageUploadBll {
     private String imagepath;
@@ -26,7 +27,7 @@ public class ImageUploadBll {
 
     }
 
-    public boolean uploadFile() {
+    public String uploadFile() {
 
         File file = new File(imagepath);
         RequestBody requestBody= RequestBody.create(MediaType.parse("multipart/from-data"),file);
@@ -36,15 +37,14 @@ public class ImageUploadBll {
         Call<ImageResponse> imageResponseCall= itemApi.uploadImage(part);
         StrictModeClass.StrictMode();
         try {
-            if(imageResponseCall.execute().isSuccessful()){
-                Toast.makeText(mContext, "Image Upload Successfull", Toast.LENGTH_SHORT).show();
-                    return true;
-            }
+            Response<ImageResponse> imageResponseResponse = imageResponseCall.execute();
+               return imageResponseResponse.body().getFilename();
+
             } catch (IOException e) {
             e.printStackTrace();
-                return false;
+                return "Error";
             }
-            return false;
-
     }
+
+
 }

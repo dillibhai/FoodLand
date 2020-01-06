@@ -1,6 +1,8 @@
 package com.machamasisuraj.foodland.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.machamasisuraj.foodland.Model.Item;
 import com.machamasisuraj.foodland.R;
+import com.machamasisuraj.foodland.Url.Url;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class ItemRecyclerAdapter extends  RecyclerView.Adapter<ItemRecyclerAdapter.ItemViewHolder> {
@@ -35,11 +42,12 @@ public class ItemRecyclerAdapter extends  RecyclerView.Adapter<ItemRecyclerAdapt
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Item item = itemList.get(position);
+       Picasso.get().load(Url.base_url+"/"+item.getImage()).into(holder.imageView);
+
         holder.textView.setText(item.getItemName());
         holder.textView2.setText("Rs. "+item.getPrice());
         holder.textView4.setText(item.getDetail());
         holder.textView5.setText(item.getResturant());
-
 
     }
 

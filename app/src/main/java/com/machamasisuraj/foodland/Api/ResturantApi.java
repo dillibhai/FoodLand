@@ -10,10 +10,10 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface ResturantApi {
-@GET("/resturant/all")
+@GET("resturant/all")
     Call<Resturant> getAllResturant();
 
-@POST("/resturant/create")
+@POST("resturant/create")
     Call<Resturant> insertResturant(@Body Resturant resturant, @Header("Authorization") String token);
 
 }
