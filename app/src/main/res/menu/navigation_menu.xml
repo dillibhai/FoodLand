@@ -2,11 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <item android:id="@+id/Category"
+        android:title="Categories"/>
+
     <item android:id="@+id/navone"
-        android:title="navone"/>
+        android:title="Momos"/>
 
     <item android:id="@+id/uploadmage"
-        android:title="Upload Image"/>
+        android:title="Chaumin"/>
+    <item android:id="@+id/ChickenCurry"
+        android:title="Chicken Curry"/>
+    <item android:id="@+id/fish"
+        android:title="Fish Curry"/>
+    <item android:id="@+id/Egg"
+        android:title="Egg Curry "/>
+
+
+
+
 
 
 </menu>

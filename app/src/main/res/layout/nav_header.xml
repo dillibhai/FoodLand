@@ -3,26 +3,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark">
+    android:background="#FF0000">
 
     <ImageView
-        android:layout_width="114dp"
-        android:layout_height="92dp"
+        android:layout_width="110dp"
+        android:layout_height="102dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/ic_launcher_round" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="SJ App"/>
+        android:textSize="25sp"
+        android:textStyle="italic"
+        android:textColor="@color/colorWhite"
+        android:text="Foodmandu"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="sj@sj.com"/>
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:text="Order Your Desired Food "/>
 
 
 </LinearLayout>
